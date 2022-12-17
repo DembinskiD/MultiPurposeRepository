@@ -4,13 +4,13 @@
     </Properties>
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+            <PatternLayout pattern="TEST %d{yyyy-MM-dd HH:mm:ss} %p %m %c{1} %F:%L %n"/>
         </Console>
         <File name="File" fileName="out.log" append="false">
-            <PatternLayout pattern="FileLog %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+            <PatternLayout pattern="TEST FileLog %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
         </File>
         <File name="FILE2" fileName="FILE2.log" append="true">
-            <PatternLayout pattern="File2Log %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+            <PatternLayout pattern="TEST File2Log %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
         </File>
     </Appenders>
     <Loggers>

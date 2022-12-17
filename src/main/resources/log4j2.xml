@@ -1,7 +1,25 @@
-<Configuration status="debug" name="dembinski" packages="com.dembinski">
+<Configuration status="info" name="dembinski" packages="">
+    <Properties>
+        <Property name="filename"></Property>
+    </Properties>
     <Appenders>
-        <Console name="stdout" target="SYSTEM_OUT">
+        <Console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
         </Console>
+        <File name="File" fileName="out.log" append="false">
+            <PatternLayout pattern="FileLog %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </File>
+        <File name="FILE2" fileName="FILE2.log" append="true">
+            <PatternLayout pattern="File2Log %d{yyyy-MM-dd HH:mm:ss} %p %m%n"/>
+        </File>
     </Appenders>
+    <Loggers>
+        <Logger name="com.dembinski.log4j" level="debug">
+            <AppenderRef ref = "FILE2"/>
+        </Logger>
+        <Root level="ALL">
+            <AppenderRef ref = "STDOUT"/>
+            <AppenderRef ref = "File"/>
+        </Root>
+    </Loggers>
 </Configuration>

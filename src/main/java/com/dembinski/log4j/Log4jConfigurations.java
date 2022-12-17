@@ -13,4 +13,8 @@ public class Log4jConfigurations {
         logger.warn("warn log");
         logger.fatal("fatal log");
     }
+
+    public static void main(String[] args) {
+        new Log4jConfigurations().logDifferentLevels();
+    }
 }
